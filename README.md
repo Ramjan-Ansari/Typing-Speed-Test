@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Typing Speed Test
 
-Currently, two official plugins are available:
+A **Typing Speed Test** web application built with **React**, **Tailwind CSS**, and **TypeScript**. This app allows users to measure their typing speed (WPM, CPM) and accuracy while typing sample texts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🔹 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Start/Restart typing test
+- Multiple test durations: 15s, 30s, 60s, 120s
+- Real-time stats:
+  - WPM (Words Per Minute)
+  - CPM (Characters Per Minute)
+  - Accuracy (%)
+  - Errors
+- Highlights correct and incorrect characters while typing
+- Responsive UI using **Tailwind CSS**
+- Fully type-safe with **TypeScript**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔹 Technologies Used
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React** - Frontend UI library
+- **TypeScript** - Strongly typed JavaScript
+- **Tailwind CSS** - Styling and responsive design
+- **React Hooks** - State and lifecycle management
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
+## 🔹 ScreenShots
+<img width="1192" height="626" alt="Screenshot 2026-03-18 102725" src="https://github.com/user-attachments/assets/95726281-377d-41b4-81da-fc4048333284" />
+<img width="1273" height="619" alt="Screenshot 2026-03-18 102901" src="https://github.com/user-attachments/assets/3f60becb-1999-41c6-bea4-0e51b294b1fa" />
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+----
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔹 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```text
+src/
+│
+├── components/
+│   ├── TypingTest.tsx
+│   ├── StatsPanel.tsx
+│   ├── ResultPanel.tsx
+│
+│
+├── utils/
+│   ├── textSamples.ts
+│
+├── App.tsx
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
